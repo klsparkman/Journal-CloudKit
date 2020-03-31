@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3546EC69243297F300A3E354 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546EC68243297F300A3E354 /* Entry.swift */; };
+		35B0D7832432ADD5008EA084 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B0D7822432ADD5008EA084 /* EntryController.swift */; };
 		35DD11B824328E9600978FE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD11B724328E9600978FE4 /* AppDelegate.swift */; };
 		35DD11BA24328E9600978FE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD11B924328E9600978FE4 /* SceneDelegate.swift */; };
 		35DD11BC24328E9600978FE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DD11BB24328E9600978FE4 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3546EC68243297F300A3E354 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		35B0D7822432ADD5008EA084 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		35DD11B424328E9600978FE4 /* Journal-CloudKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journal-CloudKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DD11B724328E9600978FE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35DD11B924328E9600978FE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		3546EC65243297BE00A3E354 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35B0D7852432B061008EA084 /* ViewController */,
+				35B0D7842432B05B008EA084 /* ModelController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -63,6 +67,21 @@
 				3546EC68243297F300A3E354 /* Entry.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		35B0D7842432B05B008EA084 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				35B0D7822432ADD5008EA084 /* EntryController.swift */,
+			);
+			path = ModelController;
+			sourceTree = "<group>";
+		};
+		35B0D7852432B061008EA084 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		35DD11AB24328E9600978FE4 = {
@@ -189,6 +208,7 @@
 			files = (
 				3546EC69243297F300A3E354 /* Entry.swift in Sources */,
 				35DD11BC24328E9600978FE4 /* ViewController.swift in Sources */,
+				35B0D7832432ADD5008EA084 /* EntryController.swift in Sources */,
 				35DD11B824328E9600978FE4 /* AppDelegate.swift in Sources */,
 				35DD11BA24328E9600978FE4 /* SceneDelegate.swift in Sources */,
 			);
