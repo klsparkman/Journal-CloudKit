@@ -13,12 +13,19 @@ class EntryListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         EntryController.sharedInstance.fetchEntries { (result) in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.updateViews()
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    func updateViews() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,5 +50,13 @@ class EntryListTableViewController: UITableViewController {
             let entryToSend = EntryController.sharedInstance.entries[indexPath.row]
             destinationVC.entry = entryToSend
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let entryToDelete = EntryController.sharedInstance.entries[indexPath.row]
+            EntryController.sharedInstance.remove(entry: entryToDelete)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+    }
     }
 }

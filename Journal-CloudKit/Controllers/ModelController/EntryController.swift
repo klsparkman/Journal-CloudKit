@@ -20,7 +20,13 @@ class EntryController {
     func createEntry(with title: String, body: String, completion: @escaping (_ result: Result<Entry?, EntryError>) -> Void) {
         let newEntry = Entry(title: title, body: body)
         save(entry: newEntry, completion: completion)
-    }
+    }//End of Create
+    
+    func remove(entry: Entry) {
+        if let index = entries.firstIndex(of: entry) {
+            entries.remove(at: index)
+        }
+    }//End of remove
     
     func save(entry: Entry, completion: @escaping (_ result: Result<Entry?, EntryError>) -> Void) {
         
@@ -37,7 +43,7 @@ class EntryController {
             self.entries.insert(savedEntry, at: 0)
             completion(.success(savedEntry))
         }
-    }
+    }//End of save
     
     func fetchEntries(with completion: @escaping(_ result: Result<[Entry]?, EntryError>) -> Void) {
         let predicate = NSPredicate(value: true)
@@ -54,7 +60,7 @@ class EntryController {
             completion(.success(entries))
             
         }
-    }
+    }//End of fetch
     
 }//End of Class
 

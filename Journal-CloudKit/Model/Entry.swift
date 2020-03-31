@@ -15,7 +15,7 @@ struct EntryConstants {
     static let recordTypeKey = "Entry"
 }
 
-class Entry {
+class Entry: Equatable {
     
     let title: String
     let body: String
@@ -30,6 +30,10 @@ class Entry {
         self.ckRecordID = ckRecordID
     }
 }//End of Class
+
+func ==(lhs: Entry, rhs: Entry) -> Bool {
+    return lhs.title == rhs.title && lhs.body == rhs.body && lhs.timestamp == rhs.timestamp && lhs.ckRecordID == rhs.ckRecordID
+}
 
 extension CKRecord {
     convenience init(entry: Entry) {
