@@ -12,6 +12,7 @@ class EntryController {
     
     //Source of Truth
     var entries: [Entry] = []
+    static let sharedInstance = EntryController()
     let privateDB = CKContainer.default().privateCloudDatabase
     
     
